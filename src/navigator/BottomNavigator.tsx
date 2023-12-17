@@ -5,6 +5,7 @@ import HomeIcon from '../assets/icons/home.svg';
 import OrderIcon from '../assets/icons/shopping-bag.svg';
 import HomeScreen from '../screens/HomeScreen';
 import OrderScreen from '../screens/OrderScreen';
+import {Colors} from '../constants/theme';
 
 const Tab = createBottomTabNavigator();
 const BottomNavigator = () => {
@@ -14,7 +15,7 @@ const BottomNavigator = () => {
       screenOptions={{
         tabBarHideOnKeyboard: true,
         tabBarStyle: {
-          backgroundColor: 'black',
+          backgroundColor: Colors.White,
           height: 55,
         },
       }}>
@@ -35,7 +36,7 @@ const BottomNavigator = () => {
               <HomeIcon
                 width={80}
                 height={20}
-                fill={focused ? 'white' : 'grey'}
+                fill={focused ? Colors.PrimaryColor : Colors.Grey}
               />
             );
           },
@@ -58,7 +59,7 @@ const BottomNavigator = () => {
               <OrderIcon
                 width={80}
                 height={20}
-                fill={focused ? 'white' : 'grey'}
+                fill={focused ? Colors.PrimaryColor : Colors.Grey}
               />
             );
           },

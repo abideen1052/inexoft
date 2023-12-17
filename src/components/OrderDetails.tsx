@@ -11,6 +11,7 @@ import React from 'react';
 import BackIcon from '../assets/icons/back-button.svg';
 import {setDetailsModalVisible} from '../redux/orders/ordersSlice';
 import {useDispatch} from 'react-redux';
+import {Colors} from '../constants/theme';
 const {width} = Dimensions.get('window');
 const OrderDetails = ({customer, grandTotal, itemList}: any) => {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const OrderDetails = ({customer, grandTotal, itemList}: any) => {
           onPress={() => {
             dispatch(setDetailsModalVisible(false));
           }}>
-          <BackIcon width={23} height={23} fill={'white'} />
+          <BackIcon width={23} height={23} fill={Colors.Black} />
         </TouchableOpacity>
 
         <Text style={styles.headText}>Order Details</Text>
@@ -59,7 +60,7 @@ const OrderDetails = ({customer, grandTotal, itemList}: any) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'black',
+    backgroundColor: Colors.White,
     alignItems: 'center',
     flex: 1,
     width,
@@ -73,7 +74,7 @@ const styles = StyleSheet.create({
   },
   headText: {
     fontWeight: 'bold',
-    color: 'white',
+    color: Colors.Black,
     fontSize: 20,
     marginVertical: 10,
     alignSelf: 'center',
@@ -87,7 +88,7 @@ const styles = StyleSheet.create({
   },
   subText: {
     fontWeight: 'bold',
-    color: 'white',
+    color: Colors.Black,
     fontSize: 20,
   },
   itemHead: {
@@ -99,7 +100,7 @@ const styles = StyleSheet.create({
   },
   itemHeadText: {
     fontWeight: 'bold',
-    color: 'white',
+    color: Colors.Black,
     fontSize: 16,
     marginVertical: 10,
   },
@@ -112,7 +113,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
   },
   itemName: {
-    color: 'white',
+    color: Colors.Black,
     fontSize: 18,
   },
 });

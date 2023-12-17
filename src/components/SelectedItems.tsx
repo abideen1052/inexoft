@@ -2,6 +2,7 @@ import {Dimensions, FlatList, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {useSelector} from 'react-redux';
 import {RootState} from '../redux/store';
+import {Colors} from '../constants/theme';
 
 const {height} = Dimensions.get('window');
 const SelectedItems = () => {
@@ -38,9 +39,10 @@ const SelectedItems = () => {
 
 const styles = StyleSheet.create({
   itemContainer: {
+    elevation: 5,
     width: '95%',
     maxHeight: height * 0.5,
-    backgroundColor: 'white',
+    backgroundColor: Colors.White,
     borderRadius: 15,
     justifyContent: 'center',
   },
@@ -58,11 +60,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   itemName: {
-    color: 'black',
+    color: Colors.Black,
     fontSize: 18,
   },
   headText: {
-    color: 'black',
+    color: Colors.Black,
     fontSize: 20,
     fontWeight: 'bold',
     alignSelf: 'center',

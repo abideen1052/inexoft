@@ -17,6 +17,7 @@ import {
   setShowSelectCustomer,
   setShowSelectItems,
 } from '../redux/home/homeSlice';
+import {Colors} from '../constants/theme';
 
 const {height} = Dimensions.get('window');
 const CustomerComponent = () => {
@@ -59,6 +60,7 @@ const CustomerComponent = () => {
                 </TouchableOpacity>
               );
             }}
+            showsVerticalScrollIndicator={false}
             keyExtractor={item => item.id.toString()}
           />
         </View>
@@ -79,20 +81,21 @@ const styles = StyleSheet.create({
     width: '95%',
     height: 60,
     elevation: 5,
-    backgroundColor: 'white',
+    backgroundColor: Colors.White,
     borderRadius: 15,
     justifyContent: 'center',
   },
   buttonText: {
     fontWeight: 'bold',
-    color: 'black',
+    color: Colors.Black,
     fontSize: 20,
     marginLeft: 15,
   },
   customerContainer: {
+    elevation: 5,
     width: '95%',
     height: height * 0.5,
-    backgroundColor: 'white',
+    backgroundColor: Colors.White,
     borderRadius: 15,
     justifyContent: 'center',
   },
@@ -101,7 +104,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   customerName: {
-    color: 'black',
+    color: Colors.Black,
     fontSize: 18,
     marginLeft: 15,
   },

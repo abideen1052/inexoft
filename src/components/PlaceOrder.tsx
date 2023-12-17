@@ -3,6 +3,7 @@ import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '../redux/store';
 import {resetOrder, setConfirmOrderList} from '../redux/home/homeSlice';
+import {Colors} from '../constants/theme';
 
 const PlaceOrder = () => {
   const {grandTotal, confirmOrderList, orderItemList, selectedCustomer} =
@@ -58,11 +59,11 @@ const styles = StyleSheet.create({
   },
   totalText: {
     fontWeight: 'bold',
-    color: 'white',
+    color: Colors.Black,
     fontSize: 20,
   },
   orderButton: {
-    backgroundColor: 'white',
+    backgroundColor: Colors.PrimaryColor,
     height: 50,
     width: 100,
     justifyContent: 'center',
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontWeight: 'bold',
-    color: 'black',
+    color: Colors.White,
     fontSize: 20,
   },
 });

@@ -20,18 +20,20 @@ import {
   setShowSelectedItems,
 } from '../redux/home/homeSlice';
 import ItemDetails from './ItemDetails';
+import {Colors} from '../constants/theme';
 
 const {height} = Dimensions.get('window');
 const ItemsComponent = () => {
   const [selectedItemId, setSelectedItemId] = useState('');
-  const {showAddItems, showSelectItems, showItemDetails} = useSelector(
-    (state: RootState) => state.home,
-  );
+  const {selectedCustomer, showAddItems, showSelectItems, showItemDetails} =
+    useSelector((state: RootState) => state.home);
+  const enable = selectedCustomer.length > 0 ? false : true;
   const dispatch = useDispatch();
   return (
     <View style={styles.container}>
       {showAddItems && (
         <TouchableOpacity
+          disabled={enable}
           style={styles.addButton}
           onPress={() => {
             dispatch(setShowAddItems(false));
@@ -78,6 +80,7 @@ const ItemsComponent = () => {
                 </View>
               );
             }}
+            showsVerticalScrollIndicator={false}
             keyExtractor={item => item.id.toString()}
           />
           <TouchableOpacity
@@ -106,20 +109,21 @@ const styles = StyleSheet.create({
     width: '95%',
     height: 60,
     elevation: 5,
-    backgroundColor: 'white',
+    backgroundColor: Colors.White,
     borderRadius: 15,
     justifyContent: 'center',
   },
   buttonText: {
     fontWeight: 'bold',
-    color: 'black',
+    color: Colors.Black,
     fontSize: 20,
     marginLeft: 15,
   },
   itemContainer: {
+    elevation: 5,
     width: '95%',
     height: height * 0.5,
-    backgroundColor: 'white',
+    backgroundColor: Colors.White,
     borderRadius: 15,
     justifyContent: 'center',
   },
@@ -131,14 +135,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   itemName: {
-    color: 'black',
+    color: Colors.Black,
     fontSize: 18,
   },
 
   itemsAddButton: {
     height: 50,
     width: 100,
-    backgroundColor: 'black',
+    backgroundColor: Colors.PrimaryColor,
     alignSelf: 'center',
     marginVertical: 10,
     borderRadius: 15,
@@ -147,7 +151,7 @@ const styles = StyleSheet.create({
   },
   itemsButtonText: {
     fontWeight: 'bold',
-    color: 'white',
+    color: Colors.White,
     fontSize: 15,
   },
 });

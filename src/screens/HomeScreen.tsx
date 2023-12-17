@@ -6,6 +6,7 @@ import PlaceOrder from '../components/PlaceOrder';
 import SelectedItems from '../components/SelectedItems';
 import {useSelector} from 'react-redux';
 import {RootState} from '../redux/store';
+import {Colors} from '../constants/theme';
 
 const HomeScreen = () => {
   const {showSelectedItems, orderItemList} = useSelector(
@@ -32,7 +33,7 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: Colors.White,
     paddingTop: 20,
     paddingHorizontal: 15,
     alignItems: 'center',
@@ -40,7 +41,7 @@ const styles = StyleSheet.create({
   },
   headText: {
     fontWeight: 'bold',
-    color: 'white',
+    color: Colors.Black,
     fontSize: 20,
     marginVertical: 20,
   },

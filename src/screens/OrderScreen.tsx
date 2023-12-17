@@ -12,6 +12,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '../redux/store';
 import {setDetailsModalVisible} from '../redux/orders/ordersSlice';
 import OrderDetails from '../components/OrderDetails';
+import {Colors} from '../constants/theme';
 
 const OrderScreen = () => {
   const {confirmOrderList} = useSelector((state: RootState) => state.home);
@@ -21,7 +22,7 @@ const OrderScreen = () => {
   const jsonString = JSON.stringify(confirmOrderList);
   const cnfList = JSON.parse(jsonString);
   console.log(' Order screen log ', JSON.stringify(cnfList, null, 2));
-  console.log('Length', cnfList.length);
+
   return (
     <View style={styles.container}>
       <StatusBar
@@ -42,8 +43,10 @@ const OrderScreen = () => {
                   dispatch(setDetailsModalVisible(true));
                   setSelectedItemId(item.orderId);
                 }}>
-                <Text>{item.selectedCustomer}</Text>
-                <Text>{`${'₹ '}${item.grandTotal}`}</Text>
+                <Text style={styles.itemText}>{item.selectedCustomer}</Text>
+                <Text style={styles.itemText}>{`${'₹ '}${
+                  item.grandTotal
+                }`}</Text>
               </TouchableOpacity>
               <Modal
                 animationType="none"
@@ -74,7 +77,7 @@ export default OrderScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: Colors.White,
     paddingTop: 20,
     paddingHorizontal: 10,
     alignItems: 'center',
@@ -82,7 +85,7 @@ const styles = StyleSheet.create({
   },
   headText: {
     fontWeight: 'bold',
-    color: 'white',
+    color: Colors.Black,
     fontSize: 20,
     marginVertical: 20,
   },
@@ -93,12 +96,17 @@ const styles = StyleSheet.create({
     width: '99%',
     height: 60,
     elevation: 5,
-    backgroundColor: 'white',
+    backgroundColor: Colors.White,
     borderRadius: 15,
-    marginBottom: 5,
+    marginVertical: 10,
     paddingHorizontal: 20,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+  },
+  itemText: {
+    color: Colors.Black,
+    fontSize: 15,
+    fontWeight: 'bold',
   },
 });

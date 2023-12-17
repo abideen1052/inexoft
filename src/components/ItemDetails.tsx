@@ -16,6 +16,7 @@ import {
   setGrandTotal,
 } from '../redux/home/homeSlice';
 import {RootState} from '../redux/store';
+import {Colors} from '../constants/theme';
 
 const ItemDetails = ({id, title, amount}: any) => {
   const [qty, setQty] = useState(1);
@@ -74,7 +75,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   content: {
-    backgroundColor: 'white',
+    backgroundColor: Colors.White,
     width: '90%',
     height: 250,
     borderRadius: 15,
@@ -88,13 +89,13 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   title: {
-    color: 'black',
+    color: Colors.Black,
     fontSize: 20,
     fontWeight: 'bold',
     marginVertical: 10,
   },
   amount: {
-    color: 'black',
+    color: Colors.Black,
     fontSize: 20,
     fontWeight: 'bold',
     marginVertical: 10,
@@ -118,7 +119,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   qtyText: {
-    color: 'black',
+    color: Colors.Black,
     fontSize: 18,
     fontWeight: 'bold',
   },
@@ -130,19 +131,19 @@ const styles = StyleSheet.create({
     borderColor: 'grey',
     fontSize: 20,
     fontWeight: '900',
-    color: 'black',
+    color: Colors.Black,
     marginLeft: 10,
   },
   button: {
     height: 60,
     width: 100,
     borderRadius: 10,
-    backgroundColor: 'black',
+    backgroundColor: Colors.PrimaryColor,
     justifyContent: 'center',
     alignItems: 'center',
   },
   buttonText: {
-    color: 'white',
+    color: Colors.White,
     fontSize: 18,
     fontWeight: 'bold',
   },
