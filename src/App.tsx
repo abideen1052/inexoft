@@ -1,20 +1,14 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Provider} from 'react-redux';
+import {store} from './redux/store';
+import StackNavigator from './navigator/StackNavigator';
 
 function App() {
   return (
-    <View style={styles.container}>
-      <Text>Inexoft</Text>
-    </View>
+    <Provider store={store}>
+      <StackNavigator />
+    </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
 
 export default App;
