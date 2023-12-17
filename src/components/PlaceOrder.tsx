@@ -13,17 +13,6 @@ const PlaceOrder = () => {
   const cnfList = JSON.parse(jsonString);
   console.log(' Confirmed list ', JSON.stringify(cnfList, null, 2));
 
-  // const saveArrayToStorage = async (key: any, array: any) => {
-  //   try {
-  //     const jsonValue = JSON.stringify(array);
-  //     console.log(jsonValue);
-  //     //await AsyncStorage.setItem(key, jsonValue);
-  //     console.log('Array saved successfully!');
-  //   } catch (error) {
-  //     console.error('Error saving array to AsyncStorage:', error);
-  //   }
-  // };
-
   const handleOrderPress = () => {
     const orderId = Date.now() + Math.random().toString(36).substring(2, 8);
     const updatedList = [
@@ -32,8 +21,6 @@ const PlaceOrder = () => {
     ];
     dispatch(setConfirmOrderList(updatedList));
     dispatch(resetOrder());
-
-    //saveArrayToStorage('confirmOrderListKey', updatedList);
   };
   return (
     <View style={styles.container}>
